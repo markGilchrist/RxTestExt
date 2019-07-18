@@ -3,21 +3,40 @@
 import RxTest
 import XCTest
 
-extension TestableObservable where Element: Comparable {
+extension TestableObserver {
     var elements: [Element] {
-        return self.recordedEvents.compactMap { $0.value.element }
+        return events.compactMap { $0.value.element }
+    }
+    
+    var valueCount: Int {
+        return events.filter{ $0.value.error == nil }.count
     }
     
     var errorCount: Int {
-        return self.recordedEvents.filter{ $0.value.error != nil }.count
+        return events.filter{ $0.value.error != nil }.count
     }
     
+    func asssertValueCount(_ count:Int, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertEqual(count, valueCount, file: file, line: line)
+    }
+    
+    func assertThatAt(_ index: Int, that: @escaping(Element) -> Bool, file: StaticString = #file, line: UInt = #line){
+        XCTAssertTrue(that(elements[index]))
+    }
+}
+
+extension TestableObserver where Element: Comparable {
+    
     func assertElements(_ recorded: Element...) {
-        XCTAssertEqual(self.elements, recorded, file: #file, line: #line )
+        XCTAssertEqual(elements, recorded, file: #file, line: #line )
+    }
+    
+    func assertValueAt(_ index: Int, value: Element, file: StaticString = #file, line: UInt = #line){
+         XCTAssertEqual(elements[index], value, file: #file, line: #line)
     }
     
     func assertElementCount(_ expectedCount: Int, that: (Element) -> Bool) {
-        XCTAssertEqual(self.elements.filter(that).count, expectedCount, file: #file, line: #line )
+        XCTAssertEqual(elements.filter(that).count, expectedCount, file: #file, line: #line )
     }
     
     func assertNoError() {

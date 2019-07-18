@@ -70,6 +70,7 @@
 		4751F7E1E17B51DE45E3516A9F15EE72 /* XCTest+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26377DDBD877AAE70A2209B794BA26F5 /* XCTest+Rx.swift */; };
 		4971F9E21A9CB19C7790103F3E51136B /* VirtualTimeScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31703A712DDAAC43E344854196B0BC8 /* VirtualTimeScheduler.swift */; };
 		49997D2BE2E5FB63E3938177E042CE8F /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C7A3839B8BF9EEC8498EA155D998FF /* Sample.swift */; };
+		4D03FFD422E0C1C400CD358A /* NimbleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D03FFD322E0C1C400CD358A /* NimbleExtensions.swift */; };
 		4DF80B3289A9E199F20E9522A0768FD1 /* ReplaySubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3576E457038D886B07153588BB36750F /* ReplaySubject.swift */; };
 		4E2EFF9DF426FC1F7A79B776205FC9E2 /* Cancelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DEBD8D4CA52DB0892169695C8C266A /* Cancelable.swift */; };
 		4F14915367D9DBD62F55D47E62F8ACD2 /* CurrentThreadScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F0BBE76FEE1F7189C3DBB4FEEE759 /* CurrentThreadScheduler.swift */; };
@@ -329,6 +330,7 @@
 		4953CDA6DE8CE94E4EB676DB513CBB99 /* SubscribeOn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SubscribeOn.swift; path = RxSwift/Observables/SubscribeOn.swift; sourceTree = "<group>"; };
 		4AD25D02EA4C7E0956A31C4FD4144997 /* RxTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTest.swift; path = RxTest/RxTest.swift; sourceTree = "<group>"; };
 		4B3B60A05BC4E339EFC775360EFC30DF /* Pods-RxTestExt_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RxTestExt_Example-umbrella.h"; sourceTree = "<group>"; };
+		4D03FFD322E0C1C400CD358A /* NimbleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleExtensions.swift; sourceTree = "<group>"; };
 		4E9E566A2F9C8E64F0D2C3A001606DCB /* AnonymousObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnonymousObserver.swift; path = RxSwift/Observers/AnonymousObserver.swift; sourceTree = "<group>"; };
 		4EA69F1E92AE27CFE01B2A61DE550B52 /* Queue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = Platform/DataStructures/Queue.swift; sourceTree = "<group>"; };
 		523EEDE83BC506D00FEF3822CDFB1550 /* RxTestExt-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxTestExt-dummy.m"; sourceTree = "<group>"; };
@@ -758,6 +760,7 @@
 		5EE6245F91CB90369541260A8727FEA8 /* RxTestExt */ = {
 			isa = PBXGroup;
 			children = (
+				4D03FFD322E0C1C400CD358A /* NimbleExtensions.swift */,
 				F94A623A54C2241A844D96B0B2A03398 /* RxTextExtensions.swift */,
 				18B91D033EA19BD49DE5EBB847CB10A2 /* Pod */,
 				F96FD16618E30E6A1F2018ED7A70033E /* Support Files */,
@@ -1035,6 +1038,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
+				TargetAttributes = {
+					AB7A700FDA20621A9AFBB417ABD9AF9E = {
+						LastSwiftMigration = 1020;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1307,6 +1315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D03FFD422E0C1C400CD358A /* NimbleExtensions.swift in Sources */,
 				E1B1CE5D83DC6AC29D9BDA6F5407EB7F /* Pods-RxTestExt_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1557,6 +1566,7 @@
 			baseConfigurationReference = CABC7246FF1C87B41AF6AA51FF9DBE83 /* Pods-RxTestExt_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1579,6 +1589,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1776,6 +1788,7 @@
 			baseConfigurationReference = CE6EEE7136B9C7B1AE95BCA3F9E5DFD4 /* Pods-RxTestExt_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1798,6 +1811,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
