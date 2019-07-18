@@ -1,0 +1,6 @@
+framework module RxTestExt {
+  umbrella header "RxTestExt-umbrella.h"
+
+  export *
+  module * { export * }
+}
