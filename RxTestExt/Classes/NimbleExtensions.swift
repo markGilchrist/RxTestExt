@@ -10,12 +10,13 @@ import Nimble
 import RxTest
 
 extension TestableObserver {
+    
+    
     func assertValueCount(_ count:Int, file: String = #file, line: UInt = #line) {
         expect(self.valueCount, file: file, line: line) == count
     }
     
-    func assertThatAt(_ index: Int, that: @escaping(Element) -> Bool, file: String = #file, line: UInt = #line){
-        
+    func assertThatAt(_ index: Int, that: @escaping(Element) -> Bool, file: String = #file, line: UInt = #line) {
         expect(that(self.elements[index])) == true
     }
 }
@@ -26,7 +27,7 @@ extension TestableObserver where Element: Comparable {
         expect(self.elements, file: file, line: line) == recorded
     }
     
-    func assertValueAt(_ index: Int, value: Element, file: String = #file, line: UInt = #line){
+    func assertValueAt(_ index: Int, value: Element, file: String = #file, line: UInt = #line) {
         expect(self.elements[index],  file: #file, line: #line) == value
     }
     
