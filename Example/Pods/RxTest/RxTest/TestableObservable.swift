@@ -9,8 +9,7 @@
 import RxSwift
 
 /// Observable sequence that records subscription lifetimes and timestamped events sent to observers.
-public class TestableObservable<Element>
-    : ObservableType {
+public class TestableObservable<Element>: ObservableType {
     /// Subscriptions recorded during observable lifetime.
     public internal(set) var subscriptions: [Subscription]
 
@@ -18,7 +17,7 @@ public class TestableObservable<Element>
     ///
     /// Event times represent absolute `TestScheduler` time.
     public internal(set) var recordedEvents: [Recorded<Event<Element>>]
-    
+
     /// Parent test scheduler.
     internal let testScheduler: TestScheduler
 

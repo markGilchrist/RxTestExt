@@ -9,7 +9,7 @@
 import RxSwift
 
 /// Virtual time scheduler used for testing applications and libraries built using RxSwift.
-public class TestScheduler : VirtualTimeScheduler<TestSchedulerVirtualTimeConverter> {
+public class TestScheduler: VirtualTimeScheduler<TestSchedulerVirtualTimeConverter> {
     /// Default values of scheduler times.
     public struct Defaults {
         /// Default absolute time when to create tested observable sequence.
@@ -97,24 +97,24 @@ public class TestScheduler : VirtualTimeScheduler<TestSchedulerVirtualTimeConver
         var source: Observable<Element>?
         var subscription: Disposable?
         let observer = self.createObserver(Element.self)
-        
+
         _ = self.scheduleAbsoluteVirtual((), time: created) { _ in
             source = create()
             return Disposables.create()
         }
-        
+
         _ = self.scheduleAbsoluteVirtual((), time: subscribed) { _ in
             subscription = source!.subscribe(observer)
             return Disposables.create()
         }
-        
+
         _ = self.scheduleAbsoluteVirtual((), time: disposed) { _ in
             subscription!.dispose()
             return Disposables.create()
         }
 
         self.start()
-        
+
         return observer
     }
 
@@ -148,5 +148,3 @@ public class TestScheduler : VirtualTimeScheduler<TestSchedulerVirtualTimeConver
         return self.start(created: Defaults.created, subscribed: Defaults.subscribed, disposed: Defaults.disposed, create: create)
     }
 }
-
-
