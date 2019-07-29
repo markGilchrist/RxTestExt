@@ -1,11 +1,13 @@
 import XCTest
 import RxTestExt
+import RxTest
 
 class Tests: XCTestCase {
+    var testScheduler: TestScheduler!
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        testScheduler = TestScheduler(initialClock: 0)
     }
     
     override func tearDown() {

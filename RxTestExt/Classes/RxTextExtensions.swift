@@ -58,11 +58,11 @@ extension TestableObserver {
     }
     
     func assertComplete(file: StaticString = #file, line: UInt = #line){
-        XCTAssertNotEqual(0, completeions, file: #file, line: #line )
+        XCTAssertNotEqual(0, completeions, file: file, line: line )
     }
     
     func assertNotComplete(file: StaticString = #file, line: UInt = #line){
-        XCTAssertEqual(0, completeions, file: #file, line: #line )
+        XCTAssertEqual(0, completeions, file: file, line: line )
     }
     
     func assertErrorMessage(message: String, file: StaticString = #file, line: UInt = #line) {
@@ -102,16 +102,16 @@ extension TestableObserver where Element: Comparable {
     
     func assertValueAt(_ index: Int, value: Element, file: StaticString = #file, line: UInt = #line){
         if let element = getElementSafely(index, file: file, line: line) {
-            XCTAssertEqual(element, value, file: #file, line: #line)
+            XCTAssertEqual(element, value, file: file, line: line)
         }
     }
     
-    func assertElementCount(_ expectedCount: Int, that: (Element) -> Bool) {
-        XCTAssertEqual(elements.filter(that).count, expectedCount, file: #file, line: #line )
+    func assertElementCount(_ expectedCount: Int, that: (Element) -> Bool,file: StaticString = #file, line: UInt = #line) {
+        XCTAssertEqual(elements.filter(that).count, expectedCount, file: file, line: line )
     }
     
-    func assertNoError() {
-        XCTAssertEqual(0, errorCount, file: #file, line: #line )
+    func assertNoError(_ file: StaticString = #file, line: UInt = #line) {
+        XCTAssertEqual(0, errorCount, file: file, line: line )
     }
 }
 

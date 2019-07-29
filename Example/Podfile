@@ -5,7 +5,5 @@ target 'RxTestExt_Example' do
 
   target 'RxTestExt_Tests' do
     inherit! :search_paths
-
-    
   end
 end
