@@ -14,7 +14,7 @@ extension TestableObserver {
     }
 
     var valueCount: Int {
-        return events.filter { $0.value.error == nil }.count
+        return elements.count
     }
 
     var errors: [Error] {

@@ -11,9 +11,9 @@ import RxTest
 
 extension TestableObserver {
 
-    func assertErrorIs<T: Error>(_ type: T.Type, file: String = #file, line: UInt = #line) {
+    func assertErrorIs<T: Error>(_ type: T, file: String = #file, line: UInt = #line) {
         if let error = getErrorSafely(file: file, line: line) {
-            expect(error is T.Type, file: file, line: line) == true
+            expect(error is T, file: file, line: line) == true
         }
     }
 
