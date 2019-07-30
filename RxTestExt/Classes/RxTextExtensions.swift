@@ -28,23 +28,23 @@ extension TestableObserver {
             XCTAssertTrue(that(element))
         }
     }
-    
+
     public func assertComplete(file: StaticString = #file, line: UInt = #line) {
         XCTAssertNotEqual(0, completeions, file: file, line: line )
     }
-    
+
     public func assertNotComplete(file: StaticString = #file, line: UInt = #line) {
         XCTAssertEqual(0, completeions, file: file, line: line )
     }
-    
+
     public func assertErrorMessage(message: String, file: StaticString = #file, line: UInt = #line) {
         if let error = getErrorSafely(file: file, line: line) {
             XCTAssertEqual(error.localizedDescription, message, file: file, line: line)
         }
     }
 
-    // MARK:  internal functions
-    
+    // MARK: internal functions
+
     internal func getElementSafely(_ index: Int, file: StaticString, line: UInt ) -> Element? {
         guard index >= 0 && index < elements.count else {
             XCTFail("index out of bounds index ->[\(index)], count -> [\(elements.count)]", file: file, line: line)
@@ -71,7 +71,6 @@ extension TestableObserver {
         return self.errors[0]
     }
 
-    
 }
 
 extension TestableObserver where Element: Comparable {
