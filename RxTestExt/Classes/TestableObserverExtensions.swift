@@ -25,7 +25,7 @@ extension TestableObserver {
         return errors.count
     }
 
-    var completeions: Int {
+    var completions: Int {
         return events.filter { $0.value.isCompleted }.count
     }
 }

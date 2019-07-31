@@ -30,11 +30,11 @@ extension TestableObserver {
     }
 
     public func assertComplete(file: StaticString = #file, line: UInt = #line) {
-        XCTAssertNotEqual(0, completeions, file: file, line: line )
+        XCTAssertNotEqual(0, completions, file: file, line: line )
     }
 
     public func assertNotComplete(file: StaticString = #file, line: UInt = #line) {
-        XCTAssertEqual(0, completeions, file: file, line: line )
+        XCTAssertEqual(0, completions, file: file, line: line )
     }
 
     public func assertErrorMessage(message: String, file: StaticString = #file, line: UInt = #line) {

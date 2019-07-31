@@ -64,11 +64,11 @@ extension TestableObserver {
     }
 
     func assertComplete(file: String = #file, line: UInt = #line) {
-        expect(self.completeions, file: file, line: line ) != 0
+        expect(self.completions, file: file, line: line ) != 0
     }
 
     func assertNotComplete(file: String = #file, line: UInt = #line) {
-        expect(self.completeions, file: file, line: line ) == 0
+        expect(self.completions, file: file, line: line ) == 0
     }
 
     func assertErrorMessage(message: String, file: String = #file, line: UInt = #line) {
