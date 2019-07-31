@@ -18,7 +18,7 @@ internal func equals<Element: Equatable>(lhs: Event<Element>, rhs: Event<Element
         #else
         let error1 = e1 as NSError
         let error2 = e2 as NSError
-        
+
         return error1.domain == error2.domain
             && error1.code == error2.code
             && "\(e1)" == "\(e2)"
@@ -37,7 +37,7 @@ internal func equals<Element: Equatable>(lhs: Event<Element?>, rhs: Event<Elemen
         #else
         let error1 = e1 as NSError
         let error2 = e2 as NSError
-        
+
         return error1.domain == error2.domain
             && error1.code == error2.code
             && "\(e1)" == "\(e2)"
@@ -55,7 +55,7 @@ internal func equals<Element: Equatable>(lhs: SingleEvent<Element>, rhs: SingleE
         #else
         let error1 = e1 as NSError
         let error2 = e2 as NSError
-        
+
         return error1.domain == error2.domain
             && error1.code == error2.code
             && "\(e1)" == "\(e2)"
@@ -74,7 +74,7 @@ internal func equals<Element: Equatable>(lhs: MaybeEvent<Element>, rhs: MaybeEve
         #else
         let error1 = e1 as NSError
         let error2 = e2 as NSError
-        
+
         return error1.domain == error2.domain
             && error1.code == error2.code
             && "\(e1)" == "\(e2)"

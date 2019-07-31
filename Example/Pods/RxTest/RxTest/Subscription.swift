@@ -7,13 +7,12 @@
 //
 
 /// Records information about subscriptions to and unsubscriptions from observable sequences.
-public struct Subscription
-    {
+public struct Subscription {
 
     /// Subscription virtual time.
-    public let subscribe : Int
+    public let subscribe: Int
     /// Unsubscription virtual time.
-    public let unsubscribe : Int
+    public let unsubscribe: Int
 
     /// Creates a new subscription object with the given virtual subscription time.
     ///
@@ -23,7 +22,6 @@ public struct Subscription
         self.unsubscribe = Int.max
     }
 
-    
     /// Creates a new subscription object with the given virtual subscription and unsubscription time.
     ///
     /// - parameter subscribe: Virtual time at which the subscription occurred.
@@ -44,7 +42,7 @@ extension Subscription: Hashable {
 
 extension Subscription: CustomDebugStringConvertible {
     /// A textual representation of `self`, suitable for debugging.
-    public var debugDescription : String {
+    public var debugDescription: String {
         let infiniteText = "Infinity"
         return "(\(self.subscribe): \(self.unsubscribe != Int.max ? String(self.unsubscribe) : infiniteText))"
     }

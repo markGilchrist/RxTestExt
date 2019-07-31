@@ -10,15 +10,14 @@ import RxSwift
 import Swift
 
 /// Record of a value including the virtual time it was produced on.
-public struct Recorded<Value>
-    : CustomDebugStringConvertible {
+public struct Recorded<Value>: CustomDebugStringConvertible {
 
     /// Gets the virtual time the value was produced on.
     public let time: TestTime
 
     /// Gets the recorded value.
     public let value: Value
-    
+
     public init(time: TestTime, value: Value) {
         self.time = time
         self.value = value
