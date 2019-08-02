@@ -1,7 +1,8 @@
 import XCTest
 import RxTestExt
 import RxTest
-@testable import RxSwift
+import RxSwift
+@testable import RxTestExt
 
 class Tests: XCTestCase {
     var testScheduler: TestScheduler!
@@ -15,7 +16,6 @@ class Tests: XCTestCase {
             return "example Message"
         }
     }
-
     override func setUp() {
         super.setUp()
         testScheduler = TestScheduler(initialClock: 0)
@@ -49,6 +49,18 @@ class Tests: XCTestCase {
             return false
         })
     }
+    
+    func test_assertErrorMessage() {
+        // arrange + act
+        Observable
+            .error(TestError.nullPointerException)
+            .subscribe(intObserver)
+            .disposed(by: bag)
+        
+        // assert
+        intObserver.assertErrorMessage(message: "example Message")
+    }
+
 
     func test_assertNoValues() {
         // arrange + act
@@ -61,17 +73,7 @@ class Tests: XCTestCase {
         intObserver.assertNoValues()
     }
 
-    func test_assertErrorMessage() {
-        // arrange + act
-        Observable
-            .error(TestError.nullPointerException)
-            .subscribe(intObserver)
-            .disposed(by: bag)
-
-        // assert
-        intObserver.assertErrorMessage(message: "example Message")
-    }
-
+   
     func test_assertValueCount() {
         // arrange + act
         Observable

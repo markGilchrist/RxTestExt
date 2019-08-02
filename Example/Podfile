@@ -4,6 +4,8 @@ target 'RxTestExt_Example' do
   pod 'RxTestExt', :path => '../'
 
   target 'RxTestExt_Tests' do
+    pod 'Quick'
+    pod 'Nimble'
     inherit! :search_paths
   end
 end

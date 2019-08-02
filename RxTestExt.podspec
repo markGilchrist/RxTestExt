@@ -24,5 +24,4 @@ Pod::Spec.new do |s|
   
   s.dependency 'RxSwift'
   s.dependency 'RxTest'
-  s.dependency 'Nimble'
 end
