@@ -20,5 +20,11 @@ extension TestableObserver where Element == Array<Any> {
             XCTAssertTrue(element.isEmpty, file: file, line: line)
         }
     }
+    
+    public func assertElementAtIsEmpty(_ index:Int, file: StaticString = #file, line: UInt = #line) {
+        if let element = getElementSafely(index, file: file, line: line) {
+            XCTAssertTrue(element.isEmpty, file: file, line: line)
+        }
+    }
 }
 
