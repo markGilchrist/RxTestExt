@@ -59,7 +59,7 @@ class NimbleTests: QuickSpec {
                         
                         // assert
                         intObserver.assertThatError(that: { (e) -> Bool in
-                            if let _ = e as? TestError, case _ = TestError.nullPointerException {
+                            if let error = e as? TestError, error == .nullPointerException {
                                 return true
                             }
                             return false

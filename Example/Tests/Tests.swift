@@ -11,6 +11,7 @@ class Tests: XCTestCase {
 
     enum TestError: LocalizedError {
         case nullPointerException
+        case andersonsError
 
         var errorDescription: String? {
             return "example Message"
@@ -43,7 +44,23 @@ class Tests: XCTestCase {
 
         // assert
         intObserver.assertThatError(that: { (e) -> Bool in
-            if let _ = e as? TestError, case _ = TestError.nullPointerException {
+            if let error = e as? TestError, error == .nullPointerException {
+                return true
+            }
+            return false
+        })
+    }
+    
+    func test_assertThatError_anderson_feedBack() {
+        // arrange + act
+        Observable
+            .error(TestError.andersonsError)
+            .subscribe(intObserver)
+            .disposed(by: bag)
+        
+        // assert
+        intObserver.assertThatError(that: { (e) -> Bool in
+            if let error = e as? TestError, error == TestError.nullPointerException {
                 return true
             }
             return false

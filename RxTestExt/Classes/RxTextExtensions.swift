@@ -13,8 +13,8 @@ extension TestableObserver {
     }
     
     public func assertThatAt(_ index: Int, that: @escaping(Element) -> Bool, file: StaticString = #file, line: UInt = #line) {
-        if let element = getElementSafely(index, file: file, line: line) {
-            XCTAssertTrue(that(element))
+        if let element = getElementOrFail(index, file: file, line: line) {
+            XCTAssertTrue(that(element),file: file, line: line)
         }
     }
     
@@ -27,14 +27,14 @@ extension TestableObserver {
     }
     
     public func assertErrorMessage(message: String, file: StaticString = #file, line: UInt = #line) {
-        if let error = getErrorSafely(file: file, line: line) {
+        if let error = getErrorOrFail(file: file, line: line) {
             XCTAssertEqual(error.localizedDescription, message, file: file, line: line)
         }
     }
     
     // MARK: internal functions
     
-    internal func getElementSafely(_ index: Int, file: StaticString, line: UInt ) -> Element? {
+    internal func getElementOrFail(_ index: Int, file: StaticString, line: UInt ) -> Element? {
         guard index >= 0 && index < elements.count else {
             XCTFail("index out of bounds index ->[\(index)], count -> [\(elements.count)]", file: file, line: line)
             return nil
@@ -42,7 +42,7 @@ extension TestableObserver {
         return self.elements[index]
     }
     
-    internal func getElementThatSafely(_ that: @escaping (Element) -> Bool, file: StaticString, line: UInt) -> Element? {
+    internal func getElementByPrdicateOrFail(_ that: @escaping (Element) -> Bool, file: StaticString, line: UInt) -> Element? {
         let filtered = elements.filter { that($0) }
         guard filtered.count == 1 else {
             XCTFail("the pridicate returns an invalid count -> [\(filtered.count)]", file: file, line: line)
@@ -51,7 +51,7 @@ extension TestableObserver {
         return filtered.first!
     }
     
-    internal func getErrorSafely( file: StaticString, line: UInt) -> Error? {
+    internal func getErrorOrFail( file: StaticString, line: UInt) -> Error? {
         guard errors.count == 1 else {
             let message = errors.count == 0 ? "No errors present" : "More than one Error Present \(errors.count)"
             XCTFail(message, file: file, line: line)

@@ -30,25 +30,25 @@ extension TestableObserver where Element: Comparable {
     }
     
     public func assertOneValueIs(expected: Element, _ that: @escaping(Element) -> Bool, file: StaticString = #file, line: UInt = #line ) {
-        if let recorded = getElementThatSafely(that, file: file, line: line) {
+        if let recorded = getElementByPrdicateOrFail(that, file: file, line: line) {
             XCTAssertEqual(expected, recorded, file: file, line: line)
         }
     }
     
     public func assertValueAt(_ index: Int, value: Element, file: StaticString = #file, line: UInt = #line) {
-        if let element = getElementSafely(index, file: file, line: line) {
+        if let element = getElementOrFail(index, file: file, line: line) {
             XCTAssertEqual(element, value, file: file, line: line)
         }
     }
     
     public func assertLastValue(value: Element, file: StaticString = #file, line: UInt = #line) {
-        if let element = getElementSafely(elements.count - 1, file: file, line: line) {
+        if let element = getElementOrFail(elements.count - 1, file: file, line: line) {
             XCTAssertEqual(element, value, file: file, line: line)
         }
     }
     
     public func assertFirstValue(value: Element, file: StaticString = #file, line: UInt = #line) {
-        if let element = getElementSafely(0, file: file, line: line) {
+        if let element = getElementOrFail(0, file: file, line: line) {
             XCTAssertEqual(element, value, file: file, line: line)
         }
     }
