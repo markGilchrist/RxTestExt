@@ -1,7 +1,8 @@
 import XCTest
 import RxTestExt
 import RxTest
-@testable import RxSwift
+import RxSwift
+@testable import RxTestExt
 
 class Tests: XCTestCase {
     var testScheduler: TestScheduler!
@@ -10,12 +11,12 @@ class Tests: XCTestCase {
 
     enum TestError: LocalizedError {
         case nullPointerException
+        case andersonsError
 
         var errorDescription: String? {
             return "example Message"
         }
     }
-
     override func setUp() {
         super.setUp()
         testScheduler = TestScheduler(initialClock: 0)
@@ -43,12 +44,40 @@ class Tests: XCTestCase {
 
         // assert
         intObserver.assertThatError(that: { (e) -> Bool in
-            if let _ = e as? TestError, case _ = TestError.nullPointerException {
+            if let error = e as? TestError, error == .nullPointerException {
                 return true
             }
             return false
         })
     }
+    
+    func test_assertThatError_anderson_feedBack() {
+        // arrange + act
+        Observable
+            .error(TestError.andersonsError)
+            .subscribe(intObserver)
+            .disposed(by: bag)
+        
+        // assert
+        intObserver.assertThatError(that: { (e) -> Bool in
+            if let error = e as? TestError, error == TestError.nullPointerException {
+                return true
+            }
+            return false
+        })
+    }
+    
+    func test_assertErrorMessage() {
+        // arrange + act
+        Observable
+            .error(TestError.nullPointerException)
+            .subscribe(intObserver)
+            .disposed(by: bag)
+        
+        // assert
+        intObserver.assertErrorMessage(message: "example Message")
+    }
+
 
     func test_assertNoValues() {
         // arrange + act
@@ -61,17 +90,7 @@ class Tests: XCTestCase {
         intObserver.assertNoValues()
     }
 
-    func test_assertErrorMessage() {
-        // arrange + act
-        Observable
-            .error(TestError.nullPointerException)
-            .subscribe(intObserver)
-            .disposed(by: bag)
-
-        // assert
-        intObserver.assertErrorMessage(message: "example Message")
-    }
-
+   
     func test_assertValueCount() {
         // arrange + act
         Observable

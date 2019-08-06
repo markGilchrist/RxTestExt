@@ -2,7 +2,7 @@
   "name": "RxTestExt",
   "version": "0.1.0",
   "summary": "A short description of RxTestExt.",
-  "description": "TODO: Add long description of the pod here.",
+  "description": "This is a set of extension funtions that helps you write Rx test in the same way you can in android",
   "homepage": "https://github.com/markGilchrist/RxTestExt",
   "license": {
     "type": "MIT",
