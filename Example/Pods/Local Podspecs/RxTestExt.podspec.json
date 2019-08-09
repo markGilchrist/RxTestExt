@@ -2,7 +2,7 @@
   "name": "RxTestExt",
   "version": "0.1.0",
   "summary": "A short description of RxTestExt.",
-  "description": "This is a set of extension funtions that helps you write Rx test in the same way you can in android",
+  "description": "This is a set of extension functions that helps you write Rxtests in a declarative manor. \n\nThe aim is to improve the readability and minimise the risk of making errors in boiler plate code. \n\nMuch of the inspiration for these extensions came from the RxJava2",
   "homepage": "https://github.com/markGilchrist/RxTestExt",
   "license": {
     "type": "MIT",
@@ -19,15 +19,14 @@
     "ios": "9.3"
   },
   "source_files": "RxTestExt/Classes/**/*",
+  "swift_versions": "4.2",
   "dependencies": {
     "RxSwift": [
 
     ],
     "RxTest": [
 
-    ],
-    "Nimble": [
-
     ]
-  }
+  },
+  "swift_version": "4.2"
 }

@@ -5,11 +5,11 @@ PODS:
   - RxTest (5.0.0):
     - RxSwift (~> 5)
   - RxTestExt (0.1.0):
-    - Nimble
     - RxSwift
     - RxTest
 
 DEPENDENCIES:
+  - Nimble
   - Quick
   - RxTestExt (from `../`)
 
@@ -29,8 +29,8 @@ SPEC CHECKSUMS:
   Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
-  RxTestExt: 4435eed3829da0cb0bd1d9df29ce2fbb9cafd343
+  RxTestExt: 7f450fe468ae74d0de3f2d73a5c41518fd51a396
 
-PODFILE CHECKSUM: f8223ba90eaf4ca6523d3947b7991f825f79de4b
+PODFILE CHECKSUM: a4400ef41668a2a7edee71298046eb73bdd422d1
 
 COCOAPODS: 1.7.5

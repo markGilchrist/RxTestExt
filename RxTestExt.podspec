@@ -10,7 +10,11 @@ Pod::Spec.new do |s|
   s.name             = 'RxTestExt'
   s.version          = '0.1.0'
   s.summary          = 'A short description of RxTestExt.'
-  s.description      = 'This is a set of extension funtions that helps you write Rx test in the same way you can in android'
+  s.description      = 'This is a set of extension functions that helps you write Rxtests in a declarative manor. 
+
+The aim is to improve the readability and minimise the risk of making errors in boiler plate code. 
+
+Much of the inspiration for these extensions came from the RxJava2'
   
   s.homepage         = 'https://github.com/markGilchrist/RxTestExt'
   
@@ -21,6 +25,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.3'
 
   s.source_files = 'RxTestExt/Classes/**/*'
+  s.swift_version = '4.2'
   
   s.dependency 'RxSwift'
   s.dependency 'RxTest'
