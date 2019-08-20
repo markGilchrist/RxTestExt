@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1D7CE9C317B240A2370E9953 /* Pods_RxTestExt_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 286FC37D6D1427D5AD5B65A3 /* Pods_RxTestExt_Example.framework */; };
+		4D65A7E923046EE200F1B355 /* ErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D65A7E723046E6400F1B355 /* ErrorTests.swift */; };
 		4DB630C722F3532D000B465F /* NimbleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB630C522F35285000B465F /* NimbleTests.swift */; };
+		4DC372B722FDD5AA0084AB03 /* ComparableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC372B622FDD5AA0084AB03 /* ComparableTests.swift */; };
 		5DD853D8C5F4E235431CA351 /* Pods_RxTestExt_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B13BFE63FD60A519922323F8 /* Pods_RxTestExt_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -32,8 +34,10 @@
 		134D5BC4CA29A913A0C72B04 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		286FC37D6D1427D5AD5B65A3 /* Pods_RxTestExt_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTestExt_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D33B71CC392DD6127C2FC8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		4D65A7E723046E6400F1B355 /* ErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTests.swift; sourceTree = "<group>"; };
 		4DB630C122EEC8F5000B465F /* RxTestExt_Example copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RxTestExt_Example copy-Info.plist"; path = "/Users/mark/Desktop/RxTestExt/Example/RxTestExt_Example copy-Info.plist"; sourceTree = "<absolute>"; };
 		4DB630C522F35285000B465F /* NimbleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbleTests.swift; sourceTree = "<group>"; };
+		4DC372B622FDD5AA0084AB03 /* ComparableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableTests.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* RxTestExt_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxTestExt_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				4DC372B622FDD5AA0084AB03 /* ComparableTests.swift */,
+				4D65A7E723046E6400F1B355 /* ErrorTests.swift */,
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				4DB630C522F35285000B465F /* NimbleTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
@@ -297,14 +303,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RxTestExt_Example/Pods-RxTestExt_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 				"${BUILT_PRODUCTS_DIR}/RxTestExt/RxTestExt.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTestExt.framework",
@@ -343,10 +347,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RxTestExt_Tests/Pods-RxTestExt_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				4DC372B722FDD5AA0084AB03 /* ComparableTests.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +379,7 @@
 			files = (
 				4DB630C722F3532D000B465F /* NimbleTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				4D65A7E923046EE200F1B355 /* ErrorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
