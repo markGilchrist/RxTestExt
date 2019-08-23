@@ -25,7 +25,7 @@ Much of the inspiration for these extensions came from the RxJava2'
   s.ios.deployment_target = '9.3'
 
   s.source_files = 'RxTestExt/Classes/**/*'
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
   
   s.dependency 'RxSwift'
   s.dependency 'RxTest'
