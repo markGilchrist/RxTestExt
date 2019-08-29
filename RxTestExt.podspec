@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxTestExt'
-  s.version          = '0.0.4'
+  s.version          = '0.0.5'
   s.summary          = 'A short description of RxTestExt.'
   s.description      = 'This is a set of extension functions that helps you write Rxtests in a declarative manor. 
 
@@ -22,7 +22,7 @@ Much of the inspiration for these extensions came from the RxJava2'
   s.author           = { 'markGilchrist' => 'theheadchef@gameforeverything.com' }
   s.source           = { :git => 'https://github.com/markGilchrist/RxTestExt.git', :tag => s.version.to_s }
   
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
 
   s.source_files = 'RxTestExt/Classes/**/*'
   s.swift_version = '5.0'
