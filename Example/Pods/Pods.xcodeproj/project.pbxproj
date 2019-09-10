@@ -25,7 +25,7 @@
 		0CE9B22B9CF1D6BAAB6818B655C3BAA8 /* AsyncLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC799F6788F11FB6643702D80495DCA7 /* AsyncLock.swift */; };
 		0D42F06544FB8922A2A65009FAB3583F /* Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = B177EAFF1714076E55B67C9FEEB3EE04 /* Rx.swift */; };
 		0E095B3BB4591D548D35430EDE48C4B6 /* SkipUntil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DA4DE5EFB495CBC775972288449BC4 /* SkipUntil.swift */; };
-		0EAA7792FFADC6E731CD8D114E862941 /* ComparableAssertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB8775FE73A236E51CD7DFC35365BB0 /* ComparableAssertions.swift */; };
+		0EAA7792FFADC6E731CD8D114E862941 /* EquitableAssertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB8775FE73A236E51CD7DFC35365BB0 /* EquitableAssertions.swift */; };
 		0EDBA9CF74EFD0B9A93D93E0E992F6C2 /* TestableObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157064DCD123E9B0E20FDCAF120CA401 /* TestableObservable.swift */; };
 		0F7B535BAF5151C87894555638545D06 /* Deprecated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FACDB5B98DBDDE01327E4A3F9DF4D80 /* Deprecated.swift */; };
 		0FCFBD94D256BDB1E065EF3DCDCA5393 /* RxMutableBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BBCE70A3BBE8E0C36C85B838155768 /* RxMutableBox.swift */; };
@@ -629,7 +629,7 @@
 		B9E4216812DCFB9ABAAFD74BBB747A22 /* Sample.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sample.swift; path = RxSwift/Observables/Sample.swift; sourceTree = "<group>"; };
 		BAAF6522FC218D5F0F3DA034438724F3 /* Producer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Producer.swift; path = RxSwift/Observables/Producer.swift; sourceTree = "<group>"; };
 		BAE263041362D074978BB3B577DF0A05 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBB8775FE73A236E51CD7DFC35365BB0 /* ComparableAssertions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ComparableAssertions.swift; path = RxTestExt/Classes/ComparableAssertions.swift; sourceTree = "<group>"; };
+		BBB8775FE73A236E51CD7DFC35365BB0 /* EquitableAssertions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EquitableAssertions.swift; path = RxTestExt/Classes/EquitableAssertions.swift; sourceTree = "<group>"; };
 		BC8531512F6CC514A1D7A890E61208D0 /* Bag+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bag+Rx.swift"; path = "RxSwift/Extensions/Bag+Rx.swift"; sourceTree = "<group>"; };
 		BCDA759BF5E18529092E6EDBB3377C03 /* VirtualTimeConverterType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VirtualTimeConverterType.swift; path = RxSwift/Schedulers/VirtualTimeConverterType.swift; sourceTree = "<group>"; };
 		BCE1DA2A09B4247BD26A12A7C73DDC66 /* Materialize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Materialize.swift; path = RxSwift/Observables/Materialize.swift; sourceTree = "<group>"; };
@@ -1126,7 +1126,7 @@
 		CBC9031591E7606AC6E1073F584D694D /* RxTestExt */ = {
 			isa = PBXGroup;
 			children = (
-				BBB8775FE73A236E51CD7DFC35365BB0 /* ComparableAssertions.swift */,
+				BBB8775FE73A236E51CD7DFC35365BB0 /* EquitableAssertions.swift */,
 				CA2D471A6CE62FDDA7945E5470B70C35 /* ErrorExtensions.swift */,
 				4DC372B822FDDE130084AB03 /* HashableExtenstions.swift */,
 				A79161860A0C5D6C191FF49BACE49AB6 /* RxTextExtensions.swift */,
@@ -1830,7 +1830,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DC372BA22FDDE130084AB03 /* HashableExtenstions.swift in Sources */,
-				0EAA7792FFADC6E731CD8D114E862941 /* ComparableAssertions.swift in Sources */,
+				0EAA7792FFADC6E731CD8D114E862941 /* EquitableAssertions.swift in Sources */,
 				B93C053CC4B491052EE78CF178043C47 /* ErrorExtensions.swift in Sources */,
 				EE985D1374466B7C15BE2C4BE446085E /* RxTestExt-dummy.m in Sources */,
 				F0E873E4717EB8B7F8EC6A66CE92721F /* RxTextExtensions.swift in Sources */,

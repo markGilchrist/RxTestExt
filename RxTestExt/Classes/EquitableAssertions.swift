@@ -8,7 +8,7 @@
 import RxTest
 import XCTest
 
-extension TestableObserver where Element: Comparable {
+extension TestableObserver where Element: Equatable {
 
     /// Assert that the TestObserver/TestSubscriber received only the specified values in the specified order.
     ///

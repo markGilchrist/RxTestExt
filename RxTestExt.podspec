@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxTestExt'
-  s.version          = '0.0.8'
+  s.version          = '0.0.9'
   s.summary          = 'A short description of RxTestExt.'
   s.description      = 'This is a set of extension functions that helps you write Rxtests in a declarative manor. 
 
